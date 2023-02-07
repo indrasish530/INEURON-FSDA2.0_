@@ -55,7 +55,8 @@ CASE
     FROM SALES_DATA_FINAL;
  
 #5.FIND OUT THE FINAL PROFIT AND PUT IT IN COLUMN FOR EVERY ORDER ID.
-select *,substring(product_id,-8,8) as id_last_digit from sales_data_final;
+
+select *, (profit -  shipping_cost) as final_profit from sales_data_final;
 
 
 #6.FIND OUT HOW MUCH DAYS TAKEN FOR EACH ORDER TO PROCESS FOR THE SHIPMENT FOR EVERY ORDER ID.
