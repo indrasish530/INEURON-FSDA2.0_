@@ -1,3 +1,5 @@
+--------------snowflake SQL assignments------------------
+
 #1.set primary key
 use database tojo_data;
 create or replace table SALES_DATA_FINAL
@@ -41,8 +43,8 @@ create or replace table SALES_DATA_FINAL
  #its alreay in correct data type.
  
 
-#3
-SELECT DISTINCT ORDER_DATE FROM SALES_DATA_FINAL WHERE LIKE ('%-') ;
+#3.EXTACT THE LAST NUMBER AFTER THE - AND CREATE OTHER COLUMN AND UPDATE IT.
+select *,substring(product_id,-8,8) as id_last_digit from sales_data_final;
  
 #4.FLAG ,IF DISCOUNT IS GREATER THEN 0 THEN  YES ELSE FALSE AND PUT IT IN NEW COLUMN FRO EVERY ORDER ID.
 SELECT *,
@@ -51,7 +53,10 @@ CASE
     ELSE 'NO'
     END AS DISCOUNT_STATUS
     FROM SALES_DATA_FINAL;
-    
+ 
+#5.FIND OUT THE FINAL PROFIT AND PUT IT IN COLUMN FOR EVERY ORDER ID.
+select *,substring(product_id,-8,8) as id_last_digit from sales_data_final;
+
 
 #6.FIND OUT HOW MUCH DAYS TAKEN FOR EACH ORDER TO PROCESS FOR THE SHIPMENT FOR EVERY ORDER ID.
 SELECT *,
